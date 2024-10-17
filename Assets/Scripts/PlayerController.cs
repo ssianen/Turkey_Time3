@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject appleprefab;
 
+    public GameObject apple;
+
     private bool isMoving;
 
     public Vector2 input;
@@ -36,7 +38,9 @@ public class PlayerController : MonoBehaviour
             mouseWorldPos.z = 0f; // zero z
             Vector2 shootingDirection = new Vector2(mouseWorldPos.x - transform.position.x, mouseWorldPos.y - transform.position.y);
             shootingDirection.Normalize();
-            apple.GetComponent<ProjectileApple>().velocity = 5.0f*shootingDirection;
+            ProjectileApple applescript = apple.GetComponent<ProjectileApple>();
+            applescript.velocity = 5.0f*shootingDirection;
+            applescript.turkey = gameObject;
             Destroy(apple, 3.0f);
         }
 

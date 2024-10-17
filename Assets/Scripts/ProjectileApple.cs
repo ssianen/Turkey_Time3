@@ -13,8 +13,13 @@ public class ProjectileApple : MonoBehaviour
 
         RaycastHit2D[] hits = Physics2D.LinecastAll(currentPosition, newPosition);
 
-        foreach (RaycastHit2D hit in hits) {
-            Debug.Log(hit.collider.gameObject);
+        foreach (RaycastHit2D hit in hits)
+        {
+            GameObject other = hit.collider.gameObject;
+            if (other != turkey)
+            {
+                Debug.Log(hit.collider.gameObject);
+            }
         }
 
         transform.position = newPosition;

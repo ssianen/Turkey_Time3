@@ -9,14 +9,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     public float moveSpeed;
 
-    public int maxHealth = 100;
-    public int currentHealth;
-
     public GameObject appleprefab;
 
-    private GameObject apple;
-
-    public HealthBar healthBar;
+    public GameObject apple;
 
     private bool isMoving;
 
@@ -34,16 +29,10 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    private void Start()
-    {
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
-
-    }
-
     public void HandleUpdate()  
     {
         if (Input.GetKeyDown("mouse 0")) {
+            Debug.Log("Fire");
             GameObject apple = Instantiate(appleprefab, transform.position, Quaternion.identity);
             var mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mouseWorldPos.z = 0f; // zero z
@@ -129,12 +118,13 @@ public class PlayerController : MonoBehaviour
         return true;
     }
 
-    //does speciefied amount of damage
-    void TakeDamage(int damage) {
-
-        currentHealth -= damage;
-
-        healthBar.SetHealth(currentHealth);
-    }
+    // void OnTriggerEnter2D(Collider2D other)
+    // {
+    //     if (other.gameObject.CompareTag("Coin"))
+    //     {
+    //         Destroy(other.gameObject);
+    //         cm.coinCount++;
+    //     }
+    // }
 
 }

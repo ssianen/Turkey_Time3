@@ -99,7 +99,7 @@ public class PrizePlayerCollision : MonoBehaviour
             PumpkinPie.SetActive(true);
         }
         
-
+       
     }
 }
 

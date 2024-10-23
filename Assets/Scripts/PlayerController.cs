@@ -129,7 +129,6 @@ public class PlayerController : MonoBehaviour
         return true;
     }
 
-
     //does speciefied amount of damage
     void TakeDamage(int damage) {
 
@@ -137,15 +136,5 @@ public class PlayerController : MonoBehaviour
 
         healthBar.SetHealth(currentHealth);
     }
-
-    // void OnTriggerEnter2D(Collider2D other)
-    // {
-    //     if (other.gameObject.CompareTag("Coin"))
-    //     {
-    //         Destroy(other.gameObject);
-    //         cm.coinCount++;
-    //     }
-    // }
-
 
 }

@@ -527,8 +527,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  maxHealth: 100
+  currentHealth: 0
   appleprefab: {fileID: 2453364660775231474, guid: 3db847d242d22d54cae6a965772a7762, type: 3}
-  apple: {fileID: 0}
+  healthBar: {fileID: 0}
   input: {x: 0, y: 0}
   solidObjectsLayer:
     serializedVersion: 2

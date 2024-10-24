@@ -38,14 +38,14 @@ public class PrizePlayerCollision : MonoBehaviour
     }
 
     //Runs every time player collides with rigidbody of any prize
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
     
-        if (other.gameObject.tag == "Player") { 
+        if (other.gameObject.CompareTag("Player")) { 
 
            /*add scene-specific audio stuff here later*/
             
-            if (this.gameObject.tag == "Pumpkin") { 
+            if (this.gameObject.CompareTag ("Pumpkin")) { 
 
                 //Pumpkin icon should appear in inventory
                 PumpkinIcon.SetActive(true);
@@ -54,7 +54,7 @@ public class PrizePlayerCollision : MonoBehaviour
                 /*add audio stuff here later*/
             } 
             
-            if (this.gameObject.tag == "Egg") { 
+            if (this.gameObject.CompareTag("Egg")) { 
 
                 //Egg icon should appear in inventory
                 EggIcon.SetActive(true);
@@ -63,7 +63,7 @@ public class PrizePlayerCollision : MonoBehaviour
                 /*add audio stuff here later*/
             } 
 
-            if (this.gameObject.tag == "Wheat") { 
+            if (this.gameObject.CompareTag("Wheat")) { 
 
                 //Wheat icon should appear in inventory
                 WheatIcon.SetActive(true);
@@ -72,7 +72,7 @@ public class PrizePlayerCollision : MonoBehaviour
                 /*add audio stuff here later*/
             } 
 
-            if (this.gameObject.tag == "Milk") { 
+            if (this.gameObject.CompareTag("Milk")) { 
 
                 //Milk icon should appear in inventory
                 MilkIcon.SetActive(true);
@@ -81,7 +81,7 @@ public class PrizePlayerCollision : MonoBehaviour
                 /*add audio stuff here later*/
             } 
 
-            if (this.gameObject.tag == "Cinnamon") { 
+            if (this.gameObject.CompareTag("Cinnamon")) { 
 
                 //Cinnamon icon should appear on HUD/GUI
                 CinnamonIcon.SetActive(true);

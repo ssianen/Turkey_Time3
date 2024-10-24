@@ -9,6 +9,7 @@ TagManager:
   - Wheat
   - Milk
   - Cinnamon
+  - Prize
   layers:
   - Default
   - TransparentFX

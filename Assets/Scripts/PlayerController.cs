@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
 
     public LayerMask interactableLayer;
 
+    public CoinManager prizeManager;
+
 
     private void Awake()
     {
@@ -129,12 +131,33 @@ public class PlayerController : MonoBehaviour
         return true;
     }
 
-    //does speciefied amount of damage
+    //does specified amount of damage
     void TakeDamage(int damage) {
 
         currentHealth -= damage;
 
         healthBar.SetHealth(currentHealth);
     }
+
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+    Debug.Log("Triggered with: " + other.gameObject.name); // Log what triggered
+    if (other.gameObject.CompareTag("Prize")) 
+    {
+        Debug.Log("Coin collected!");
+        Destroy(other.gameObject);
+        
+        if (prizeManager != null)
+        {
+            prizeManager.coinCount++;
+        }
+        else
+        {
+            Debug.LogWarning("Prize Manager is not assigned!");
+        }
+    }
+}
+
 
 }
